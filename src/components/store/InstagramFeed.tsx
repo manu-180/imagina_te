@@ -6,12 +6,12 @@ import Image from 'next/image'
 import { CONTACT_INSTAGRAM } from '@/lib/constants'
 
 const FEED_IMAGES = [
-  'https://images.unsplash.com/photo-1591348122449-02525d70379b?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1571513722275-4b41940f54b8?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1572804013427-4d7ca7268217?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1612215327100-3b85d4b29fcf?auto=format&fit=crop&w=800&q=85',
-  'https://images.unsplash.com/photo-1604611268945-d77df0d36a76?auto=format&fit=crop&w=800&q=85',
+  'https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/lenceria-products/1000246751.jpg',
+  'https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/lenceria-products/1000246750.jpg',
+  'https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/lenceria-products/1000246749.jpg',
+  'https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/unodeenero/WhatsApp%20Image%202026-05-06%20at%209.08.52%20AM.jpeg',
+  'https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/unodeenero/WhatsApp%20Image%202026-05-06%20at%209.09.12%20AM.jpeg',
+  'https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/unodeenero/WhatsApp%20Image%202026-05-06%20at%209.10.40%20AM.jpeg',
 ]
 
 export function InstagramFeed() {

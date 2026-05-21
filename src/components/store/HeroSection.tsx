@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 
 const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1612215327100-3b85d4b29fcf?auto=format&fit=crop&w=1920&q=85',
+  'https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/lenceria-products/1000246751.jpg',
 ]
 
 export function HeroSection() {

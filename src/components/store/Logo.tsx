@@ -16,10 +16,37 @@ interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { width: 100, height: 24 },
-  md: { width: 140, height: 34 },
-  lg: { width: 180, height: 44 },
-  xl: { width: 260, height: 60 },
+  sm: { fontSize: 20, heart: 11, gap: 6 },
+  md: { fontSize: 28, heart: 15, gap: 8 },
+  lg: { fontSize: 40, heart: 22, gap: 10 },
+  xl: { fontSize: 60, heart: 32, gap: 14 },
+}
+
+function HeartGlyph({
+  size,
+  color,
+  animated,
+}: {
+  size: number
+  color: string
+  animated: boolean
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={cn('shrink-0', animated && 'origin-center animate-heartbeat')}
+      style={{ display: 'inline-block' }}
+    >
+      <path
+        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+        fill={color}
+      />
+    </svg>
+  )
 }
 
 export function Logo({
@@ -30,14 +57,15 @@ export function Logo({
   animated = true,
   size = 'md',
 }: LogoProps) {
-  const { width, height } = sizeMap[size]
+  const { fontSize, heart, gap } = sizeMap[size]
 
   if (variant === 'monogram') {
+    const monoSize = fontSize + 16
     return (
       <svg
         viewBox="0 0 80 80"
-        width={height + 8}
-        height={height + 8}
+        width={monoSize}
+        height={monoSize}
         className={cn('inline-block', className)}
         aria-label="Imagina te"
       >
@@ -76,96 +104,44 @@ export function Logo({
     )
   }
 
+  const wordStyle = {
+    fontSize: `${fontSize}px`,
+    color: textColor,
+    letterSpacing: '-0.02em',
+    lineHeight: 1,
+  } as const
+
   if (variant === 'stacked') {
     return (
-      <svg
-        viewBox="0 0 220 130"
-        width={width * 0.9}
-        height={height * 2.4}
-        className={cn('inline-block', className)}
+      <span
+        className={cn('inline-flex flex-col items-center', className)}
         aria-label="Imagina te"
+        style={{ gap: `${Math.round(gap * 0.6)}px` }}
       >
-        <text
-          x="110"
-          y="45"
-          textAnchor="middle"
-          fontFamily="Cormorant Garamond, serif"
-          fontStyle="italic"
-          fontWeight="500"
-          fontSize="42"
-          letterSpacing="-1"
-          fill={textColor}
-        >
+        <span className="font-display italic font-medium" style={wordStyle}>
           imagina
-        </text>
-        <g
-          transform="translate(110 64)"
-          className={animated ? 'origin-center animate-heartbeat' : ''}
-        >
-          <path
-            d="M0 -8c-4-5-12-4-12 3 0 6 12 14 12 14s12-8 12-14c0-7-8-8-12-3z"
-            fill={heartColor}
-          />
-        </g>
-        <text
-          x="110"
-          y="115"
-          textAnchor="middle"
-          fontFamily="Cormorant Garamond, serif"
-          fontStyle="italic"
-          fontWeight="500"
-          fontSize="42"
-          letterSpacing="-1"
-          fill={textColor}
-        >
+        </span>
+        <HeartGlyph size={heart} color={heartColor} animated={animated} />
+        <span className="font-display italic font-medium" style={wordStyle}>
           te
-        </text>
-      </svg>
+        </span>
+      </span>
     )
   }
 
-  // Horizontal default
   return (
-    <svg
-      viewBox="0 0 320 56"
-      width={width}
-      height={height}
-      className={cn('inline-block', className)}
+    <span
+      className={cn('inline-flex items-center', className)}
       aria-label="Imagina te"
+      style={{ gap: `${gap}px` }}
     >
-      <text
-        x="0"
-        y="40"
-        fontFamily="Cormorant Garamond, serif"
-        fontStyle="italic"
-        fontWeight="500"
-        fontSize="40"
-        letterSpacing="-0.8"
-        fill={textColor}
-      >
+      <span className="font-display italic font-medium" style={wordStyle}>
         imagina
-      </text>
-      <g
-        transform="translate(166 22)"
-        className={animated ? 'origin-center animate-heartbeat' : ''}
-      >
-        <path
-          d="M0 -6c-3-4-10-3-10 3 0 5 10 12 10 12s10-7 10-12c0-6-7-7-10-3z"
-          fill={heartColor}
-        />
-      </g>
-      <text
-        x="200"
-        y="40"
-        fontFamily="Cormorant Garamond, serif"
-        fontStyle="italic"
-        fontWeight="500"
-        fontSize="40"
-        letterSpacing="-0.8"
-        fill={textColor}
-      >
+      </span>
+      <HeartGlyph size={heart} color={heartColor} animated={animated} />
+      <span className="font-display italic font-medium" style={wordStyle}>
         te
-      </text>
-    </svg>
+      </span>
+    </span>
   )
 }

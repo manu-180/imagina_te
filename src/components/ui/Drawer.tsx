@@ -13,6 +13,8 @@ interface DrawerProps {
   title?: string
   children: ReactNode
   className?: string
+  /** Ocultar header default (el consumidor renderiza el suyo dentro de children) */
+  hideHeader?: boolean
 }
 
 export function Drawer({
@@ -22,6 +24,7 @@ export function Drawer({
   title,
   children,
   className,
+  hideHeader = false,
 }: DrawerProps) {
   useEffect(() => {
     if (!open) return
@@ -65,19 +68,21 @@ export function Drawer({
               className
             )}
           >
-            <div className="flex items-center justify-between border-b border-warm-gray-100 px-6 py-4 flex-shrink-0">
-              {title && (
-                <h2 className="font-display text-xl italic text-ink">{title}</h2>
-              )}
-              <button
-                type="button"
-                aria-label="Cerrar"
-                onClick={onClose}
-                className="ml-auto p-1 text-soft-black hover:text-ink transition-colors"
-              >
-                <X size={20} strokeWidth={1.5} />
-              </button>
-            </div>
+            {!hideHeader && (
+              <div className="flex items-center justify-between border-b border-warm-gray-100 px-6 py-4 flex-shrink-0">
+                {title && (
+                  <h2 className="font-display text-xl italic text-ink">{title}</h2>
+                )}
+                <button
+                  type="button"
+                  aria-label="Cerrar"
+                  onClick={onClose}
+                  className="ml-auto p-1 text-soft-black hover:text-ink transition-colors"
+                >
+                  <X size={20} strokeWidth={1.5} />
+                </button>
+              </div>
+            )}
             <div className="flex-1 overflow-y-auto">{children}</div>
           </motion.aside>
         </div>

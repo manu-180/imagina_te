@@ -12,8 +12,8 @@ export default function NosotrosPage() {
     <>
       <section className="relative h-[55vh] min-h-[440px] overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1591348122769-7f3e75c0afe1?auto=format&fit=crop&w=1920&q=85"
-          alt="Detalle de un robe de satén champagne"
+          src="https://zrzpmgyafuesmakkoysn.supabase.co/storage/v1/object/public/unodeenero/WhatsApp%20Image%202026-05-06%20at%209.10.07%20AM.jpeg"
+          alt="Detalle de una prenda Imagina te"
           fill
           priority
           sizes="100vw"

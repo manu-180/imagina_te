@@ -122,7 +122,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </Link>
       )}
 
-      <h1 className="font-display italic text-4xl md:text-5xl leading-tight text-ink">
+      <h1 className="font-display italic text-3xl sm:text-4xl md:text-5xl leading-tight text-ink break-words">
         {product.name}
       </h1>
 

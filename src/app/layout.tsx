@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Inter, Italiana } from 'next/font/google'
 import { Toaster } from 'sonner'
 import { getSiteConfig } from '@/lib/site-config'
@@ -28,6 +28,15 @@ const italiana = Italiana({
 })
 
 export const dynamic = 'force-dynamic'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover',
+  themeColor: '#F5EFE7',
+}
 
 export const metadata: Metadata = {
   title: {
