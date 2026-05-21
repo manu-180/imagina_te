@@ -267,7 +267,7 @@ function MobileMenuContent({
   onOpenCart,
 }: MobileMenuContentProps) {
   return (
-    <div className="relative min-h-full flex flex-col">
+    <div className="relative min-h-full flex flex-col overflow-x-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-champagne/15 blur-3xl"
@@ -345,16 +345,13 @@ function MobileMenuContent({
           <FadeItem>
             <SectionLabel>Explorar</SectionLabel>
             <ul className="space-y-1">
-              {NAV_LINKS.map((link, i) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={onClose}
                     className="group relative flex items-center gap-4 py-3 border-b border-warm-gray-100/70"
                   >
-                    <span className="text-[10px] tracking-eyebrow text-champagne font-medium w-6">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-display italic text-2xl text-ink leading-tight group-hover:text-champagne transition-colors">
@@ -412,15 +409,11 @@ function MobileMenuContent({
               <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-champagne/15 to-transparent" />
               <Truck size={20} strokeWidth={1.4} className="text-champagne flex-shrink-0" />
               <div className="relative">
-                <p className="text-[10px] uppercase tracking-eyebrow text-champagne font-medium">
-                  Envío gratis
-                </p>
-                <p className="text-sm leading-tight mt-0.5">
-                  En compras desde{' '}
+                <p className="text-sm leading-tight">
+                  Envío gratis desde{' '}
                   <span className="font-medium">
                     {formatPriceARS(FREE_SHIPPING_THRESHOLD)}
-                  </span>{' '}
-                  a todo el país
+                  </span>
                 </p>
               </div>
             </div>

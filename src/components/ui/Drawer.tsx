@@ -63,7 +63,7 @@ export function Drawer({
             exit={exit}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
-              'absolute top-0 bottom-0 w-full sm:max-w-md bg-cream shadow-2xl flex flex-col',
+              'absolute top-0 bottom-0 w-full sm:max-w-md bg-cream shadow-2xl flex flex-col overflow-x-hidden',
               side === 'right' ? 'right-0' : 'left-0',
               className
             )}
@@ -83,7 +83,7 @@ export function Drawer({
                 </button>
               </div>
             )}
-            <div className="flex-1 overflow-y-auto">{children}</div>
+            <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain">{children}</div>
           </motion.aside>
         </div>
       )}

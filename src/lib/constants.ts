@@ -4,7 +4,7 @@ export const SITE_NAME = 'Imagina te'
 export const SITE_TAGLINE = 'Renueva tu interior'
 export const SITE_BRAND_HEART = '♥'
 
-export const FREE_SHIPPING_THRESHOLD = 35000
+export const FREE_SHIPPING_THRESHOLD = 70000
 
 export const SHIPPING_OPTIONS = [
   {

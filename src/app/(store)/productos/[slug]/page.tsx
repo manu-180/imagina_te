@@ -56,7 +56,7 @@ export default async function PDPPage({ params }: Props) {
           <span className="text-ink truncate">{product.name}</span>
         </nav>
 
-        <div className="grid lg:grid-cols-[1.4fr,1fr] gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] gap-10 lg:gap-16">
           <ProductGallery images={product.images ?? []} productName={product.name} />
           <ProductInfo product={product} />
         </div>

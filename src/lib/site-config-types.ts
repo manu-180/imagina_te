@@ -15,9 +15,9 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   store_name: 'Imagina te',
   store_tagline: 'Renueva tu interior',
   store_currency: 'ARS',
-  free_shipping_threshold: 35000,
+  free_shipping_threshold: 70000,
   announcement_bar: {
-    text: 'Envío gratis a todo el país en compras desde $35.000',
+    text: 'Envío gratis desde $70.000',
     active: true,
   },
   brand_colors: {
