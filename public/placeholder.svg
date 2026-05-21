@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <rect width="300" height="400" fill="#E5DED1"/>
+  <g transform="translate(150 200)" fill="#C9A96E" opacity="0.4">
+    <path d="M0 -10c-5-7-18-5-18 5 0 8 18 22 18 22s18-14 18-22c0-10-13-12-18-5z"/>
+  </g>
+  <text x="150" y="260" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="14" fill="#8A8175">imagina te</text>
+</svg>

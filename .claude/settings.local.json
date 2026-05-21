@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.savagex.com)",
+      "WebFetch(domain:www.honeybirdette.com)",
+      "WebFetch(domain:www.agentprovocateur.com)",
+      "WebFetch(domain:skims.com)",
+      "mcp__70d9e470-49b9-42e9-8795-0e7b7617562a__list_tables"
+    ]
+  }
+}
