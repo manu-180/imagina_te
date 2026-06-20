@@ -134,20 +134,46 @@ export function Footer() {
         </div>
 
         {/* Bottom strip */}
-        <div className="mt-14 pt-8 border-t border-warm-gray-500/40 flex flex-col md:flex-row justify-between gap-4 items-center">
+        <div className="mt-14 pt-8 border-t border-warm-gray-500/40 flex flex-col items-center gap-4 md:flex-row md:justify-between">
           <p className="text-xs text-warm-gray-500">
             © {new Date().getFullYear()} Imagina te. Todos los derechos reservados.
           </p>
-          <div className="flex gap-5">
-            {LEGAL_LINKS.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-xs text-warm-gray-500 hover:text-cream transition-colors"
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
+            <div className="flex gap-5">
+              {LEGAL_LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="text-xs text-warm-gray-500 hover:text-cream transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+            <span
+              aria-hidden="true"
+              className="hidden h-3 w-px bg-warm-gray-500/40 sm:block"
+            />
+            <a
+              href="https://www.theapexweb.com"
+              target="_blank"
+              rel="noopener"
+              aria-label="Un proyecto de APEX — desarrollo web (theapexweb.com)"
+              className="group inline-flex items-center gap-2 text-xs text-warm-gray-500 transition-colors hover:text-cream motion-reduce:transition-none"
+            >
+              <span
+                aria-hidden="true"
+                className="inline-flex h-[18px] w-[18px] items-center justify-center border border-warm-gray-500/70 text-[9px] font-medium text-warm-gray-300 transition-colors group-hover:border-champagne group-hover:text-champagne motion-reduce:transition-none"
               >
-                {l.label}
-              </Link>
-            ))}
+                A
+              </span>
+              <span>
+                Un proyecto de{" "}
+                <span className="text-warm-gray-300 transition-colors group-hover:text-champagne">
+                  APEX
+                </span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
